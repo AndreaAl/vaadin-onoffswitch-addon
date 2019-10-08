@@ -20,7 +20,7 @@ public class OnOffSwitch extends AbstractField<Boolean> {
 	            // 양쪽 Value가 틀린 경우 Click 상태 값 변경 
 	            if (!newValue.equals(oldValue)) {
 	            	// 서버측 Value 변경
-	                setValue(newValue);
+	                setValue(newValue,true);
 	            }
 	            // 클라이언트 RPC alert 메서드 호출
 	            getRpcProxy(OnOffSwitchClientRpc.class).alert(String.valueOf(newValue));
